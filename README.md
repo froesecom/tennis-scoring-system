@@ -39,7 +39,8 @@ Includes:
 - NOTE: _the matchComplete function is not complete_. The exercise spec said to only worry about one set. This function can be extended to work like real tennis, ie best of 3 or 5 sets
 
 ### ScoreKeeper
-
+- knows how to increment points and mark games/sets complete when told
+- doesn't know why it does the things it does
 
 ### ScoreReporter
 - knows the logic behind reporting on scores
