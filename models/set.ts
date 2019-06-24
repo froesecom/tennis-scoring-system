@@ -8,11 +8,14 @@ export class TennisSet {
 
   createGame(): void {}
 
-  get wonBy() {
-    return null
+  get wonBy(): number | null {
+    return this._wonBy
   }
 
-  set wonBy(name: number | null) {}
+  set wonBy(name: number | null) {
+    // validate
+    this._wonBy = name
+  }
 
   private nextGameTiebreaker() {}
 }
