@@ -5,13 +5,23 @@ export class Game {
   readonly score: GameScore = [0, 0]
   readonly tiebreaker: boolean = false
 
-  constructor({ tiebreaker }: { tiebreaker?: boolean } = {}) {}
-
-  incrementScore(playerIndex: number): void {}
-
-  get wonBy() {
-    return null
+  constructor({ tiebreaker }: { tiebreaker?: boolean } = {}) {
+    if (tiebreaker) {
+      this.tiebreaker = tiebreaker
+    }
   }
 
-  set wonBy(name: number | null) {}
+  incrementScore(playerIndex: number): void {
+    // validate
+    this.score[playerIndex] = this.score[playerIndex] + 1
+  }
+
+  get wonBy(): number | null {
+    return this._wonBy
+  }
+
+  set wonBy(name: number | null) {
+    // validate
+    this._wonBy = name
+  }
 }

@@ -22,4 +22,4 @@ Includes:
 
 ## Domain modeling
 ### Game
-- Simple claass that only knows about it's own state and nothing else
+- Simple class that only knows about it's own state and nothing else
