@@ -36,4 +36,4 @@ Includes:
 - knows when games/sets/matches are complete... ie, knows the rules of tennis
 - doesn't know anything about how to present scores
 - doesn't have side effects
-- NOTE: _the matchComplete function is not complete_. The exercise spec said to only worry about one set. This function can extend this function to work like real tennis, ie best of 3 or 5 sets
+- NOTE: _the matchComplete function is not complete_. The exercise spec said to only worry about one set. This function can be extended to work like real tennis, ie best of 3 or 5 sets
