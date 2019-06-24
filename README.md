@@ -62,6 +62,7 @@ Includes:
 - Umpire class is too big and should be broken into umpires for each type (Game/TennisSet/Match)
 - I don't like how Player index is passed around. The order of players passed into the Match initializer matters or the score report makes no sense, and I kind of got carried away passing the index around rather than the player instance.
 - Match class might be a bit of a God object and could be simplified
+- on a final read through, ScoreReporter is doing some of what the GameScorePresenter is supposed to do... ie, present human readable scores. Those functions need to move to the GameScorePresenter
 - a bunch of functions need refactoring... I left comments where I could
 - a lot more integration tests
 - tests for private functions
