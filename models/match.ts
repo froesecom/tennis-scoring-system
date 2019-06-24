@@ -35,4 +35,61 @@ export class Match {
   score(options: { humanReadable: boolean } = { humanReadable: true }) {
     return this.scoreReporter.score(this.currentMatch, this.players, options)
   }
+
+  pointWonBy(playerName: string): void {
+    this.handleCompleteMatch()
+    const playerIndex = this.indexOfPlayer(playerName)
+    this.scoreKeeper.addPoint(this.currentMatch, playerIndex)
+
+    if (this.checkGameComplete()) {
+      this.scoreKeeper.markGameComplete(this.currentMatch, playerIndex)
+      this.handleGameComplete(playerIndex)
+    }
+  }
+
+  private handleGameComplete(playerIndex: number): void {
+    if (this.checkSetComplete()) {
+      this.scoreKeeper.markSetComplete(this.currentMatch, playerIndex)
+      this.handleSetComplete(playerIndex)
+    } else {
+      currentSet(this.currentMatch).createGame()
+    }
+  }
+
+  private handleSetComplete(playerIndex: number): void {
+    if (this.checkMatchComplete()) {
+      this.wonBy = playerIndex
+    } else {
+      this.createNewSet()
+    }
+  }
+
+  private checkGameComplete(): boolean {
+    return this.umpire.currentGameComplete(this.currentMatch)
+  }
+
+  private checkSetComplete(): boolean {
+    return this.umpire.currentSetComplete(this.currentMatch)
+  }
+
+  private checkMatchComplete(): boolean {
+    return this.umpire.matchComplete(this.currentMatch, this.requiredSets)
+  }
+
+  private createNewSet() {
+    this.currentMatch.push(new TennisSet())
+  }
+
+  private handleCompleteMatch(): void {
+    if (this.wonBy) {
+      throw new Error('This match is already complete')
+    }
+  }
+
+  private indexOfPlayer(playerName: string): number {
+    // throw error if can't find
+    return this.players.findIndex(p => {
+      return p.name === playerName
+    })
+  }
 }
