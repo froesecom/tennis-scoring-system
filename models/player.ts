@@ -1,4 +1,7 @@
 export class Player {
+  static PLAYER_1_INDEX: number = 0
+  static PLAYER_2_INDEX: number = 1
+
   readonly index: number
   readonly name: string
 
