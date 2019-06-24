@@ -19,6 +19,8 @@ Includes:
 - `yarn test` to run tests
 
 ## Approach
+- TDD... write unit tests and then implement the function
+- I didn't validate any inputs to functions, but put comments everywhere that should be done. This was just to save time.
 
 ## Domain modeling
 ### Game
