@@ -4,7 +4,6 @@ import { TennisSet } from '../../models/set'
 import {
   incrementPointsBy,
   incrementToTieBreaker,
-  incrementSetsBy,
 } from '../../__test_helpers__/helpers'
 
 const umpire: Umpire = new Umpire()
