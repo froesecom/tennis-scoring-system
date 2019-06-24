@@ -9,10 +9,6 @@ import {
 import { GAME_RULES, SET_RULES } from '../constants/rules'
 
 export class Umpire {
-  // has no state
-  // knows when games/sets/matches are complete
-  // ie, knows the rules of tennis
-
   currentGameComplete(match: CurrentMatch): boolean {
     const game: Game = currentGame(match)
     if (game.tiebreaker) {
@@ -27,10 +23,7 @@ export class Umpire {
   }
 
   matchComplete(match: CurrentMatch, setsToPlay: number): boolean {
-    // this is not a fully featured because the exercise
-    // said to only worry about one set
-    // can extend this function to work like real tennis
-    // ie best of 3 or 5 sets
+    // not complete... see README
     return match.length >= setsToPlay && currentSet(match).wonBy !== null
   }
 

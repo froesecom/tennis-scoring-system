@@ -25,3 +25,15 @@ Includes:
 ## Domain modeling
 ### Game
 - Simple class that only knows about it's own state and nothing else
+
+### TennisSet
+- only knows about it's own state and how it initialize Games
+- doesn't know about the implementation of Games or what they do/mean
+
+### Umpire
+- has no state
+- functions only return booleans
+- knows when games/sets/matches are complete... ie, knows the rules of tennis
+- doesn't know anything about how to present scores
+- doesn't have side effects
+- NOTE: _the matchComplete function is not complete_. The exercise spec said to only worry about one set. This function can extend this function to work like real tennis, ie best of 3 or 5 sets
