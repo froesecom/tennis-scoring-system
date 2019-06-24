@@ -38,4 +38,10 @@ Includes:
 - doesn't have side effects
 - NOTE: _the matchComplete function is not complete_. The exercise spec said to only worry about one set. This function can be extended to work like real tennis, ie best of 3 or 5 sets
 
+### ScoreReporter
+- knows the logic behind reporting on scores
+- can create a data structure representing the current score
+- doesn't know how to present the score in a human readable way (it delegates that the GameScorePresenter)
+
 ### GameScorePresenter
+- knows how to take a data representation of the score (from the ScoreReporter) and present it in a human readable way
