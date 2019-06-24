@@ -20,9 +20,16 @@ Includes:
 
 ## Approach
 - TDD... write unit tests and then implement the function
+- try to keep single responsibilty in mind
+- make it extensible so it could handle a full tennis match or different rules
+- use linters and prettiers
 - I didn't validate any inputs to functions, but put comments everywhere that should be done. This was just to save time.
 
 ## Domain modeling
+### Match
+- delegates to other classes
+- provides the client interface
+
 ### Game
 - Simple class that only knows about it's own state and nothing else
 
@@ -49,3 +56,11 @@ Includes:
 
 ### GameScorePresenter
 - knows how to take a data representation of the score (from the ScoreReporter) and present it in a human readable way
+
+## Improvements/Extensions
+- Umpire class is too big and should be broken into umpires for each type (Game/TennisSet/Match)
+- I don't like how Player index is passed around. The order of players passed into the Match initializer matters or the score report makes no sense, and I kind of got carried away passing the index around rather than the player instance.
+- Match class might be a bit of a God object and could be simplified
+- a bunch of functions need refactoring... I left comments where I could
+- a lot more integration tests
+- tests for private functions
