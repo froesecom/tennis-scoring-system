@@ -31,4 +31,8 @@ export class Match {
     this.requiredSets = requiredSets
     this.currentMatch = [new TennisSet()]
   }
+
+  score(options: { humanReadable: boolean } = { humanReadable: true }) {
+    return this.scoreReporter.score(this.currentMatch, this.players, options)
+  }
 }
