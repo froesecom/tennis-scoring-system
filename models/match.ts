@@ -1,5 +1,9 @@
 import { TennisSet } from './set'
+import { ScoreReporter } from './score_reporter'
+import { Umpire } from './umpire'
+import { ScoreKeeper } from './score_keeper'
 import { Player } from './player'
+import { currentSet } from '../helpers/match_helpers'
 export type CurrentMatch = TennisSet[]
 
 export class Match {
