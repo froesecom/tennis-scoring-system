@@ -38,6 +38,9 @@ Includes:
 - doesn't have side effects
 - NOTE: _the matchComplete function is not complete_. The exercise spec said to only worry about one set. This function can be extended to work like real tennis, ie best of 3 or 5 sets
 
+### ScoreKeeper
+
+
 ### ScoreReporter
 - knows the logic behind reporting on scores
 - can create a data structure representing the current score
