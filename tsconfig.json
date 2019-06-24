@@ -11,6 +11,9 @@
     "target": "es5"
   },
   "include": [
+    "models/**/*",
+    "helpers/**/*",
+    "presenters/**/*",
     "src/**/*",
     "__tests__/**/*"
   ],
