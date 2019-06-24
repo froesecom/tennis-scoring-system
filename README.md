@@ -52,6 +52,7 @@ Includes:
 ### ScoreReporter
 - knows the logic behind reporting on scores
 - can create a data structure representing the current score
+- doesn't know the rules of tennis, ie, what the scores mean
 - doesn't know how to present the score in a human readable way (it delegates that the GameScorePresenter)
 
 ### GameScorePresenter
