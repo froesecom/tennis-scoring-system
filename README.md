@@ -17,3 +17,9 @@ Includes:
 ### To run
 - `yarn run dummy-match` to run a fake tennis match and see example output from the program.
 - `yarn test` to run tests
+
+## Approach
+
+## Domain modeling
+### Game
+- Simple claass that only knows about it's own state and nothing else
