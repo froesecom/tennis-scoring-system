@@ -19,6 +19,7 @@ test('score return value for not humanReadable', () => {
     gamesScore: [0, 0],
     currentGameScore: [1, 0],
   })
+  expect(match.score({ humanReadable: true })).toBe('0-0, 15-0')
   match.pointWonBy('player1')
   expect(match.score({ humanReadable: false })).toStrictEqual({
     setsScore: [0, 0],
@@ -31,6 +32,7 @@ test('score return value for not humanReadable', () => {
     gamesScore: [0, 0],
     currentGameScore: [2, 1],
   })
+  expect(match.score({ humanReadable: true })).toBe('0-0, 30-15')
   match.pointWonBy('player1')
   match.pointWonBy('player1')
   expect(match.score({ humanReadable: false })).toStrictEqual({
