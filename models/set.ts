@@ -6,7 +6,10 @@ export class TennisSet {
   private _wonBy: number | null = null
   readonly games: Game[] = [new Game()]
 
-  createGame(): void {}
+  createGame(): void {
+    // validate if creating a game is appropriate
+    this.games.push(new Game({ tiebreaker: this.nextGameTiebreaker() }))
+  }
 
   get wonBy(): number | null {
     return this._wonBy
@@ -17,5 +20,7 @@ export class TennisSet {
     this._wonBy = name
   }
 
-  private nextGameTiebreaker() {}
+  private nextGameTiebreaker(): boolean {
+    return this.games.length === TennisSet.MAXIMUM_N_REGULAR_GAMES
+  }
 }
