@@ -24,8 +24,10 @@ export class GameScorePresenter {
     const s1: number = game.score[0]
     const s2: number = game.score[1]
 
+    // this function is too mysterious and needs a refactor
     return (
-      Math.abs(s1 - s2) <= seperation && (s1 >= minPoints || s2 >= minPoints)
+      (s1 === 3 && s2 === 3) ||
+      (Math.abs(s1 - s2) <= seperation && (s1 >= minPoints || s2 >= minPoints))
     )
   }
 
